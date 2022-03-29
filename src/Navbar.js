@@ -5,12 +5,9 @@ function Navbar() {
     <>
       <nav>
         <div className="Links">
-          <Link exact to="/">
-            {" "}
-            HOME{" "}
-          </Link>
-          <Link to="/draft"> DRAFT </Link>
-          <Link to="/create"> CREATE </Link>
+          <Link exact to="/">HOME</Link>
+          <Link to="/draft">DRAFT</Link>
+          <Link to="/create">CREATE</Link>
         </div>
       </nav>
       <h1 className="DraftStars">DRAFT STARS</h1>
