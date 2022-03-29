@@ -12,6 +12,7 @@ function App() {
 
   const [players, setPlayers] = useState([])
 
+
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
