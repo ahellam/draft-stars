@@ -1,4 +1,5 @@
 body {
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 10vh 90vh;
+  padding: .5rem;
+}
+
+.Nav {
+  text-align: center;
+  background-color: rgb(252, 230, 247);
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-style: solid ;
+  align-items: center;
+
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  /* grid-template-rows: 10vh; */
+}
+
+.Nav .Links {
+  grid-column-start: 1;
+
+
+
+}
+
+.Nav .DraftStars {
+  
+  grid-column-start: 3;
+
+
+  /* grid-row-start: 1; */
+
+
+  color: brown;
+  max-height: 5vh;
+  font-size: 4vh;
+}
+
+.Nav a {
+
+  padding: 3px;
+}
+
+/* .DraftStars {
+
+}  */
+
+.Content {
+  text-align: center;
+  background-color: rgb(230, 252, 249);
+
+  grid-row-start: 2;
+
+
+  border-style: solid ;
 }
