@@ -3,11 +3,14 @@ import PlayerCard from "./PlayerCard";
 import './draftPlayers.css';
 import { useState } from "react";
 
-let money = 1100;
+
 function DraftPlayers({ players }) {
   const [selectedQB, setSelectedQB] = useState();
   const [selectedWR, setSelectedWR] = useState();
-  console.log("inDraft", selectedQB)
+  const [money, setMoney] = useState(1100)
+  // console.log("inDraft", selectedQB)
+
+
 
   return (
     <div className="DraftPlayers">
@@ -33,8 +36,9 @@ function DraftPlayers({ players }) {
         </select>
       </div>
       <div className="QBCard">
-        {selectedQB && <PlayerCard
+        {selectedQB && <PlayerCard 
         selectedPlayer={players.find((player) => player.id === parseInt(selectedQB))}
+        
         />}
       </div>
 
@@ -58,8 +62,9 @@ function DraftPlayers({ players }) {
         </select>
       </div>
       <div className="WRCard">
-        {selectedWR && <PlayerCard
+        {selectedWR && <PlayerCard 
         selectedPlayer={players.find((player) => player.id === parseInt(selectedWR))}
+        // toggleDrafted={toggleDrafted}
         />}
       </div>
 

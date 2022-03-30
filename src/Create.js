@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 
-function Create() {
+function Create({onAddPlayer}) {
 
   const [newName, setNewName] = useState('')
   const [newRank, setNewRank] = useState(1)
@@ -14,14 +14,31 @@ function Create() {
   function handleSubmit(e) {
     e.preventDefault()
     const formData = {
-      newName,
-      newRank,
-      newPrice,
-      newImage,
-      newPosition,
-    
+      name: newName,
+      image: newImage,
+      rank: newRank,
+      position: newPosition,
+      price: newPrice,
+      canDelete: true 
     }
     console.log(formData)
+
+    fetch("http://localhost:3000/players", {
+      method: "POST",
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(onAddPlayer(formData))
+
+    
+
+    setNewName('')
+    setNewRank(1)
+    setNewPrice(1000)
+    setNewImage('')
+    setNewPosition("QB")
+
   }
 
   function handleRankChange (e) {

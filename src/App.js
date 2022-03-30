@@ -19,6 +19,13 @@ function App() {
     .then(setPlayers)
   },[])
 
+  function handleAddPlayer () {
+    fetch(URL)
+    .then(res => res.json())
+    .then(setPlayers)
+    
+    // setPlayers([...players, newPlayer])
+  }
 
   return (
     <Router>
@@ -32,10 +39,10 @@ function App() {
               <Home />
             </Route>
             <Route path="/draft">
-              <DraftPlayers players={players}/>
+              <DraftPlayers players={players} />
             </Route>
             <Route path="/create">
-              <Create />
+              <Create onAddPlayer={handleAddPlayer}/>
             </Route>
           </Switch>
         </div>
