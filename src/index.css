@@ -24,10 +24,13 @@ code {
 .Nav {
   text-align: center;
   background-color: rgb(252, 230, 247);
+  background-image: url('../images/grass.jpg');
+  background-size: 100%;
   grid-row-start: 1;
   grid-row-end: 2;
   border-style: solid ;
   align-items: center;
+  
 
   display: grid;
   grid-template-columns: 25% 50% 25%;
@@ -46,18 +49,23 @@ code {
   
   grid-column-start: 3;
 
-
-  /* grid-row-start: 1; */
-
-
-  color: brown;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+  font-weight: 800;
+  text-shadow: 2px 1px 2px rgb(0, 0, 0);
   max-height: 4vh;
   font-size: 4vh;
+
 }
 
 .Nav a {
 
-  padding: 7px;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 2px 1px 2px rgb(0, 0, 0);
+  font-style: italic;
 }
 
 /* .DraftStars {
@@ -66,12 +74,14 @@ code {
 
 .Content {
 
-  display: grid;
+  /* display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  text-align: center;
-  background-color: rgb(230, 252, 249);
+  text-align: center; */
+  /* background-color: rgb(230, 252, 249); */
+  background-image: url('../images/grass.jpg');
+  background-size: 100%;
 
   grid-row-start: 2;
 

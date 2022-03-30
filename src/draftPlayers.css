@@ -1,0 +1,36 @@
+.DraftPlayers {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  
+    text-align: center; 
+}
+.DraftPlayers h2 {
+    text-align: center;
+    grid-column-start: 2;
+}
+
+.DraftPlayers .SelectQB {
+    grid-column-start: 1;
+}
+
+.DraftPlayers .SelectWR {
+    grid-column-start: 3;
+    grid-row-start: 2
+}
+
+.DraftPlayers h3 {
+    text-align: center;
+    grid-column-start: 2;
+}
+
+.DraftPlayers .QBCard {
+    text-align: center;
+    grid-column-start: 1;
+}
+
+.DraftPlayers .WRCard {
+    text-align: center;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
