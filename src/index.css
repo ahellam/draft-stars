@@ -73,18 +73,11 @@ code {
 }  */
 
 .Content {
-
-  /* display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-
-  text-align: center; */
-  /* background-color: rgb(230, 252, 249); */
   background-image: url('../images/grass.jpg');
   background-size: 100%;
 
   grid-row-start: 2;
 
-
   border-style: solid ;
 }
+
