@@ -16,6 +16,7 @@ function DraftPlayers({ players }) {
       <div className="SelectQB">
         <label htmlFor="qb-select">Draft a QB:</label>
         <select
+          className="Select"
           name="qbs"
           id="QB-Select"
           value={selectedQB}
@@ -40,6 +41,7 @@ function DraftPlayers({ players }) {
       <div className="SelectWR">
         <label htmlFor="wr-select">Draft a WR:</label>
         <select
+          className="Select"
           name="wrs"
           id="WR-Select"
           value={selectedWR}

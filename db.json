@@ -4,7 +4,7 @@
         "id": 1,
         "name": "Josh Allen",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/tllerqpaxoqygxsfo0qo",
-        "rating": 1,
+        "rank": 1,
         "position": "QB",
         "price": 1000,
         "canDelete": false
@@ -15,7 +15,7 @@
         "id": 2,
         "name": "Tom Brady",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/n7fj5fjblf6pdgjdtphr",
-        "rating": 2,
+        "rank": 2,
         "position": "QB",
         "price": 900,
         "canDelete": false
@@ -24,7 +24,7 @@
         "id": 3,
         "name": "Justin Herbert",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/jdvb4tvzxvfezif7kxlg",
-        "rating": 3,
+        "rank": 3,
         "position": "QB",
         "price": 800,
         "canDelete": false
@@ -33,7 +33,7 @@
         "id": 4,
         "name": "Patrick Mahomes",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/tlg2oo5yrk6mins3nxxe",
-        "rating": 4,
+        "rank": 4,
         "position": "QB",
         "price": 700,
         "canDelete": false
@@ -42,7 +42,7 @@
         "id": 5,
         "name": "Matthew Stafford",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/pxll35kun2cq2aeluaav",
-        "rating": 5,
+        "rank": 5,
         "position": "QB",
         "price": 600,
         "canDelete": false
@@ -51,7 +51,7 @@
         "id": 6,
         "name": "Aaron Rodgers",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/hh8azxeqpydxofvo0suc",
-        "rating": 6,
+        "rank": 6,
         "position": "QB",
         "price": 500,
         "canDelete": false
@@ -60,7 +60,7 @@
         "id": 7,
         "name": "Dak Prescott",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/yazkcmz5ke0rz11p3vbo",
-        "rating": 7,
+        "rank": 7,
         "position": "QB",
         "price": 400,
         "canDelete": false
@@ -69,7 +69,7 @@
         "id": 8,
         "name": "Joe Burrow",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/fhvbn2cstui3nchv8vil",
-        "rating": 8,
+        "rank": 8,
         "position": "QB",
         "price": 300,
         "canDelete": false
@@ -78,7 +78,7 @@
         "id": 9,
         "name": "Kirk Cousins",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/y2qsks5yreyona4bvb3b",
-        "rating": 9,
+        "rank": 9,
         "position": "QB",
         "price": 200,
         "canDelete": false
@@ -87,7 +87,7 @@
         "id": 10,
         "name": "Kyler Murray",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/lu27xcnywfgzjq9vhvdl",
-        "rating": 10,
+        "rank": 10,
         "position": "QB",
         "price": 100,
         "canDelete": false
@@ -96,7 +96,7 @@
         "id": 11,
         "name": "Cooper Kupp",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/jiaeufv3lpbkhulrddjq",
-        "rating": 1,
+        "rank": 1,
         "position": "WR",
         "price": 1000,
         "canDelete": false
@@ -105,7 +105,7 @@
         "id": 12,
         "name": "Deebo Samuel",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/ccgevhaduyc9llngcnlu",
-        "rating": 2,
+        "rank": 2,
         "position": "WR",
         "price": 900,
         "canDelete": false
@@ -114,7 +114,7 @@
         "id": 13,
         "name": "Davante Adams",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/hxerspgvszxel5frf2ez",
-        "rating": 3,
+        "rank": 3,
         "position": "WR",
         "price": 800,
         "canDelete": false
@@ -123,7 +123,7 @@
         "id": 14,
         "name": "Justin Jefferson",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/o2f0n7bi0rlvx0hgpspz",
-        "rating": 4,
+        "rank": 4,
         "position": "WR",
         "price": 700,
         "canDelete": false
@@ -132,7 +132,7 @@
         "id": 15,
         "name": "Ja'Marr Chase",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/fxclfdx8fz5cbuep6ngd",
-        "rating": 5,
+        "rank": 5,
         "position": "WR",
         "price": 600,
         "canDelete": false
@@ -141,7 +141,7 @@
         "id": 16,
         "name": "Tyreek Hill",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/xw0jhb7zeobj4bkxfpwg",
-        "rating": 6,
+        "rank": 6,
         "position": "WR",
         "price": 500,
         "canDelete": false
@@ -150,7 +150,7 @@
         "id": 17,
         "name": "Stefon Diggs",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/hcvd2avk0kufoli80veb",
-        "rating": 7,
+        "rank": 7,
         "position": "WR",
         "price": 400,
         "canDelete": false
@@ -159,7 +159,7 @@
         "id": 18,
         "name": "Mike Evans",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/hp7exmuqylysgife5p9m",
-        "rating": 8,
+        "rank": 8,
         "position": "WR",
         "price": 300,
         "canDelete": false
@@ -168,7 +168,7 @@
         "id": 19,
         "name": "Diontae Johnson",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/kpxblj81lquuhjasvhe8",
-        "rating": 9,
+        "rank": 9,
         "position": "WR",
         "price": 200,
         "canDelete": false
@@ -177,7 +177,7 @@
         "id": 20,
         "name": "Mike Williams",
         "image": "https://static.www.nfl.com/image/private/t_player_profile_landscape_2x/f_auto/league/mjon6c2fwtnxbmdfoxcu",
-        "rating": 10,
+        "rank": 10,
         "position": "WR",
         "price": 100,
         "canDelete": false
