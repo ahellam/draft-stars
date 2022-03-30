@@ -1,5 +1,6 @@
 import React from "react";
 import PlayerCard from "./PlayerCard";
+import './draftPlayers.css';
 import { useState } from "react";
 
 let money = 1100;
@@ -13,7 +14,7 @@ function DraftPlayers({ players }) {
       <h2>Draft Your Players</h2>
 
       <div className="SelectQB">
-        <label for="qb-select">Draft a QB:</label>
+        <label htmlFor="qb-select">Draft a QB:</label>
         <select
           name="qbs"
           id="QB-Select"
@@ -30,13 +31,14 @@ function DraftPlayers({ players }) {
             ))}
         </select>
       </div>
-      
-      {selectedQB && <PlayerCard
+      <div className="QBCard">
+        {selectedQB && <PlayerCard
         selectedPlayer={players.find((player) => player.id === parseInt(selectedQB))}
-      />}
+        />}
+      </div>
 
       <div className="SelectWR">
-        <label for="wr-select">Draft a WR:</label>
+        <label htmlFor="wr-select">Draft a WR:</label>
         <select
           name="wrs"
           id="WR-Select"
@@ -53,10 +55,11 @@ function DraftPlayers({ players }) {
             ))}
         </select>
       </div>
-
-      {selectedWR && <PlayerCard
+      <div className="WRCard">
+        {selectedWR && <PlayerCard
         selectedPlayer={players.find((player) => player.id === parseInt(selectedWR))}
-      />}
+        />}
+      </div>
 
       <h3>Budget: ${money}</h3>
     </div>

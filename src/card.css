@@ -1,0 +1,31 @@
+.PlayerCard {
+    padding: .75rem;
+    border-style: solid;
+    border-width: .15rem;
+    /* background-color: rgba(0, 0, 0, 0.158); */
+    background-image: url('../images/birdseye.jpg');
+    background-size: 102%;
+
+
+}
+
+.PlayerCard .PlayerImage img {
+    max-width: 85%;
+    height: auto;
+    border-style: solid;
+    border-width: .15rem;
+
+    background-image: url('../images/goldglitter.jpg');
+    background-size: 135%; 
+
+}
+
+.PlayerCard .PlayerInfo {
+    padding: .5rem;
+    color: white;
+    text-shadow: 2px 1px 2px rgb(0, 0, 0);
+    /* background-color: rgba(2, 82, 35, 0.301); */
+    font-style: italic;
+    font-weight: 900;
+    font-size: 4vh;
+}
