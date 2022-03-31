@@ -39,7 +39,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/draft">
-              <DraftPlayers players={players} />
+              <DraftPlayers players={players} setPlayers={setPlayers}/>
             </Route>
             <Route path="/create">
               <Create onAddPlayer={handleAddPlayer}/>

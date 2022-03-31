@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './create.css';
 
 
 function Create({onAddPlayer}) {
@@ -10,7 +10,6 @@ function Create({onAddPlayer}) {
   const [newImage, setNewImage] = useState('')
   const [newPosition, setNewPosition] = useState("QB")
   
-
   function handleSubmit(e) {
     e.preventDefault()
     const formData = {
@@ -31,14 +30,11 @@ function Create({onAddPlayer}) {
     .then(res => res.json())
     .then(onAddPlayer(formData))
 
-    
-
     setNewName('')
     setNewRank(1)
     setNewPrice(1000)
     setNewImage('')
     setNewPosition("QB")
-
   }
 
   function handleRankChange (e) {
@@ -49,55 +45,69 @@ function Create({onAddPlayer}) {
   }
 
   return (
-    <div className="create">
+    <div id="create" className="create">
 
       <h2>Create a new player</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form className="playerform" onSubmit={handleSubmit}>
 
-        <label htmlFor="name">Player Name:</label>
-        <input type="text" 
-        id="name" 
-        placeholder="New Player Name" 
-        value={newName} 
-        onChange={e => setNewName(e.target.value)}>          
-        </input>
+        <div className="playerName">
+          <label htmlFor="name">Player Name: </label>
+          <input 
+            type="text" 
+            id="name"
+            className="name"
+            placeholder="New Player Name" 
+            value={newName} 
+            onChange={e => setNewName(e.target.value)}>          
+          </input>
+        </div>
 
-        <label htmlFor="rank">Select Rank:</label>
-        <select id="rank" value={newRank} onChange={handleRankChange}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
+        <div className="playerRank">
+          <label htmlFor="rank">Select Rank: </label>
+          <select id="rank" value={newRank} onChange={handleRankChange}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
 
-        <label htmlFor="price">Price:</label>
-        <input type="text" 
-        id="price" 
-        value={newPrice}
-        readOnly
-       ></input>
+        <div className="playerPrice">
+          <label htmlFor="price">Price: </label>
+          <input 
+            type="text" 
+            id="price" 
+            value={newPrice}
+            readOnly>
+          </input>
+        </div>
 
-        <label htmlFor="imgUrl">Image URL:</label>
-        <input type="text" 
-        id="imgUrl" 
-        placeholder="Paste URL Here" 
-        value={newImage}
-        onChange={e => setNewImage(e.target.value)}>          
-        </input>
+        <div className="playerImg">
+          <label htmlFor="imgUrl">Image URL: </label>
+          <input 
+            type="text" 
+            id="imgUrl" 
+            placeholder="Paste URL Here" 
+            value={newImage}
+            onChange={e => setNewImage(e.target.value)}>          
+          </input>
+        </div>
 
-        <label htmlFor="position">Select Position:</label>
-        <select id="position" value={newPosition} onChange={e => setNewPosition(e.target.value)}>
-          <option value="QB">Quarterback</option>
-          <option value="WR">Wide Receiver</option>
-        </select>   
-        <input type="submit" value="CREATE NEW PLAYER" />    
+        <div className="playerPosition">
+          <label htmlFor="position">Select Position: </label>
+          <select id="position" value={newPosition} onChange={e => setNewPosition(e.target.value)}>
+            <option value="QB">Quarterback</option>
+            <option value="WR">Wide Receiver</option>
+          </select>
+        </div>   
+        <input className="submit" type="submit" value=" CREATE NEW PLAYER " />    
       </form>
     </div>
   );

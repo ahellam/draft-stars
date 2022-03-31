@@ -44,7 +44,7 @@
     grid-row-start: 3;
 }
 
-label {
+.DraftPlayers label {
     color: white;
     font-style: italic;
     font-size: 2.5vh;
