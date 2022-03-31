@@ -39,9 +39,12 @@ code {
 
 .Nav .Links {
   grid-column-start: 1;
-   /* grid-row-start: 1; */
 
+}
 
+.Nav .Links .activeLink {
+  font-weight: 800;
+  text-shadow: 3px 1px 2px rgb(0, 0, 0);
 
 }
 
