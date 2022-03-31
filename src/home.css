@@ -1,0 +1,50 @@
+.home {
+    
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    
+    text-align: center;
+    
+    grid-template-columns: 1fr 1fr 3.6fr 1fr 1fr;
+    /* grid-template-rows: 15vh 30vh 20vh 25vh; */
+}
+
+.Header1 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    color: white;
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 2px 1px 2px rgb(0, 0, 0);
+}
+
+p.Rules {
+    border-style: solid;
+    border-width: .2rem;
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.5);
+    grid-row-start: 2;
+    grid-column: 3;
+    padding: .2rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.185);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.GetStarted {
+    
+    grid-row-start: 3;
+    grid-column: 3;
+    padding: 1rem;
+
+}
+
+button {
+    font-size: 150%;
+    font-style: italic;
+}
+
