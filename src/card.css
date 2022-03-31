@@ -18,6 +18,18 @@
     border-color: white;
     border-width: .20rem;
 
+    /* background-image: url('../images/goldglitter.jpg'); */
+    background-size: 135%; 
+
+}
+
+.PlayerCard .MyClass img {
+    max-width: 85%;
+    height: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: .20rem;
+
     background-image: url('../images/goldglitter.jpg');
     background-size: 135%; 
 

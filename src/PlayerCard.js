@@ -10,13 +10,12 @@ function PlayerCard({selectedPlayer, handleDraft, handleCut}) {
   //   console.log(player)
   // }
   function handleClick(){
-    
     selectedPlayer.drafted ? handleCut(selectedPlayer) : handleDraft(selectedPlayer)
   }
 
   return (
     <div className="PlayerCard">
-      <div className="PlayerImage">
+      <div className={selectedPlayer.drafted ? "MyClass" : "PlayerImage"}>
         <img src={selectedPlayer.image || defaultImg} alt={selectedPlayer.name}/>
       </div>
       <div className="PlayerInfo">
