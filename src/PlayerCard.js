@@ -1,7 +1,7 @@
 import React from 'react'
 import './card.css';
 
-function PlayerCard({selectedPlayer}) {
+function PlayerCard({selectedPlayer, handleDraft, handleCut}) {
   // console.log("in card", selectedPlayer)
 
   const defaultImg = "https://www.kindpng.com/picc/m/97-971258_transparent-football-helmet-clipart-black-and-white-football.png"
@@ -9,6 +9,10 @@ function PlayerCard({selectedPlayer}) {
   // function toggleDrafted (player) {
   //   console.log(player)
   // }
+  function handleClick(){
+    
+    selectedPlayer.drafted ? handleCut(selectedPlayer) : handleDraft(selectedPlayer)
+  }
 
   return (
     <div className="PlayerCard">
@@ -20,7 +24,7 @@ function PlayerCard({selectedPlayer}) {
         <div className="PlayerRating">Rank: #{selectedPlayer.rank}</div>
         <div className="PlayerPrice">Price: ${selectedPlayer.price}</div>
       </div>
-      <button className="DraftCutButton" >
+      <button className="DraftCutButton" onClick={handleClick} >
         {selectedPlayer.drafted ? "CUT" : "DRAFT"}
       </button>
 

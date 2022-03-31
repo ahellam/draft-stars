@@ -1,0 +1,53 @@
+#create  {
+
+  padding: 1rem;
+  text-align: center;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20vh 20vh 20vh; */
+}
+
+.create h2 {
+  text-align: center;
+
+  grid-column-start: 2;
+  color: white;
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 2px 1px 2px rgb(0, 0, 0);
+}
+
+.playerform {
+  text-align: left;
+  color: white;
+  font-style: italic;
+  font-size: 2.5vh;
+  font-weight: 800;
+  text-shadow: 2px 1px 2px rgb(0, 0, 0);
+  padding: .5rem;
+}
+
+.playerform .playerName {
+    padding: .5rem;
+}
+
+.playerform .playerRank {
+    padding: .5rem;
+}
+
+.playerform .playerPrice {
+    padding: .5rem;
+}
+
+.playerform .playerImg {
+    padding: .5rem;
+}
+
+.playerform .playerPosition {
+    padding: .5rem;
+}
+
+.playerform .submit {
+    align-self: center !important;
+    
+}
