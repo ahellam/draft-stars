@@ -3,12 +3,10 @@ import PlayerCard from "./PlayerCard";
 import './draftPlayers.css';
 import { useState } from "react";
 
-
 function DraftPlayers({ players, setPlayers }) {
   const [selectedQB, setSelectedQB] = useState();
   const [selectedWR, setSelectedWR] = useState();
   const [money, setMoney] = useState(1100)
-  // console.log("inDraft", selectedQB)
 
   function handleDraft(player) {
 
@@ -19,11 +17,10 @@ function DraftPlayers({ players, setPlayers }) {
       setPlayers(newPlayers)
       setMoney(money - player.price)
     } else {
-      alert("YOU CANT DO THAT")
+      alert("PLEASE DRAFT SOMEONE LESS EXPENSIVE")
     }
   }
   
-
   function handleCut(player) {
     const draftedPlayer = {...player, drafted: false}
     const newPlayers = players.map( p => p.id === player.id ? draftedPlayer : p )
@@ -34,7 +31,7 @@ function DraftPlayers({ players, setPlayers }) {
 
   return (
     <div className="DraftPlayers">
-      <h2>Draft Your Players</h2>
+      <h2> 🏈 &nbsp;&nbsp; Draft Your Players &nbsp;&nbsp; 🏈 </h2>
 
       <div className="SelectQB">
         <label htmlFor="qb-select">Draft a QB:</label>
@@ -90,7 +87,7 @@ function DraftPlayers({ players, setPlayers }) {
         />}
       </div>
 
-      <h3>Budget: ${money}</h3>
+      <h3>💰 &nbsp; Budget: ${money} &nbsp; 💰</h3>
     </div>
   );
 }

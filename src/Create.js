@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import { useHistory } from "react-router-dom";
 import './create.css';
 
 
@@ -9,6 +11,7 @@ function Create({onAddPlayer}) {
   const [newPrice, setNewPrice] = useState(1000)
   const [newImage, setNewImage] = useState('')
   const [newPosition, setNewPosition] = useState("QB")
+  const history = useHistory();
   
   function handleSubmit(e) {
     e.preventDefault()
@@ -35,6 +38,8 @@ function Create({onAddPlayer}) {
     setNewPrice(1000)
     setNewImage('')
     setNewPosition("QB")
+
+    history.push("/draft")
   }
 
   function handleRankChange (e) {
@@ -47,7 +52,7 @@ function Create({onAddPlayer}) {
   return (
     <div id="create" className="create">
 
-      <h2>Create a new player</h2>
+      <h2>🏈 &nbsp;&nbsp; Create a New Player &nbsp;&nbsp; 🏈</h2>
 
       <form className="playerform" onSubmit={handleSubmit}>
 
@@ -58,6 +63,7 @@ function Create({onAddPlayer}) {
             id="name"
             className="name"
             placeholder="New Player Name" 
+            required
             value={newName} 
             onChange={e => setNewName(e.target.value)}>          
           </input>
