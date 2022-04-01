@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './create.css';
 
-
-function Create({onAddPlayer}) {
+function Create({players, setPlayers, onAddPlayer}) {
 
   const [newName, setNewName] = useState('')
   const [newRank, setNewRank] = useState(1)
@@ -33,16 +32,23 @@ function Create({onAddPlayer}) {
       body: JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(console.log("AFTER THE POST FORMDATA", formData))    //  
-    .then(onAddPlayer(formData))
-
-    setNewName('')
-    setNewRank(1)
-    setNewPrice(1000)
-    setNewImage('')
-    setNewPosition("QB")
-
-    history.push("/draft")
+    .then(json => {
+      players.push(json)
+      console.log("json")
+      console.log(json)
+      console.log("players")
+      console.log(players)
+      setPlayers(players)
+    })
+    .then(() => {
+      setNewName('')
+      setNewRank(1)
+      setNewPrice(1000)
+      setNewImage('')
+      setNewPosition("QB")
+  
+      history.push("/draft")
+    })
   }
 
   function handleRankChange (e) {
