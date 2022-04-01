@@ -21,9 +21,11 @@ function Create({onAddPlayer}) {
       rank: newRank,
       position: newPosition,
       price: newPrice,
-      canDelete: true 
+      canDelete: true
+      // drafted: false
+
     }
-    console.log(formData)
+    // console.log("handleSubmit formData:", formData)
 
     fetch("http://localhost:3000/players", {
       method: "POST",
@@ -31,6 +33,7 @@ function Create({onAddPlayer}) {
       body: JSON.stringify(formData)
     })
     .then(res => res.json())
+    .then(console.log("AFTER THE POST FORMDATA", formData))    //  
     .then(onAddPlayer(formData))
 
     setNewName('')

@@ -9,7 +9,7 @@ function DraftPlayers({ players, setPlayers }) {
   const [money, setMoney] = useState(1100)
 
   function handleDraft(player) {
-
+    // console.log(player)
     const draftedPlayer = {...player, drafted: true}
     const newPlayers = players.map( p => p.id === player.id ? draftedPlayer : p )
 
@@ -17,16 +17,36 @@ function DraftPlayers({ players, setPlayers }) {
       setPlayers(newPlayers)
       setMoney(money - player.price)
     } else {
-      alert("PLEASE DRAFT SOMEONE LESS EXPENSIVE")
+      alert("CHECK YOUR BUDGET & PLEASE DRAFT SOMEONE LESS EXPENSIVE")
     }
   }
   
   function handleCut(player) {
+    // console.log(player)
     const draftedPlayer = {...player, drafted: false}
     const newPlayers = players.map( p => p.id === player.id ? draftedPlayer : p )
 
     setPlayers(newPlayers)
     setMoney(money + player.price)
+  }
+
+  function handleDelete(player) {
+     player.drafted && handleCut(player)
+
+    fetch(`http://localhost:3000/players/${player.id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json"},
+    })
+    .then(() => {
+      if (player.position === "QB") {
+        setSelectedQB()
+      } else {
+        setSelectedWR()
+      }
+    })
+  
+    .then(() => setPlayers(players.filter(p => p.id !== player.id)))
+    // .then(() => player.drafted && handleCut(player))
   }
 
   return (
@@ -57,6 +77,7 @@ function DraftPlayers({ players, setPlayers }) {
         selectedPlayer={players.find((player) => player.id === parseInt(selectedQB))}
         handleDraft={handleDraft}
         handleCut={handleCut}
+        handleDelete={handleDelete}
         />}
       </div>
 
@@ -84,6 +105,7 @@ function DraftPlayers({ players, setPlayers }) {
         selectedPlayer={players.find((player) => player.id === parseInt(selectedWR))}
         handleDraft={handleDraft}
         handleCut={handleCut}
+        handleDelete={handleDelete}
         />}
       </div>
 
