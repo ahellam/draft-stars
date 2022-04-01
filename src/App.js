@@ -21,12 +21,15 @@ function App() {
   },[])
 
   function handleAddPlayer () {
+    console.log("players state BEFORE FETCH in APP:", players)
     fetch(URL)
     .then(res => res.json())
     .then(setPlayers)
-    
-    // setPlayers([...players, newPlayer])
+    .then(console.log("players state in APP:", players))
+    console.log("players state AFTER FETCH in APP:", players)
   }
+
+  
 
   return (
     <Router>

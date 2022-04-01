@@ -45,3 +45,9 @@
     font-weight: 900;
     font-size: 4vh;
 }
+
+.PlayerCard .DeleteButton button {
+    color: red;
+    font-size: medium;
+    
+}
