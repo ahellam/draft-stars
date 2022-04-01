@@ -44,9 +44,7 @@ function DraftPlayers({ players, setPlayers }) {
         setSelectedWR()
       }
     })
-  
     .then(() => setPlayers(players.filter(p => p.id !== player.id)))
-    // .then(() => player.drafted && handleCut(player))
   }
 
   return (
