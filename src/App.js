@@ -6,17 +6,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
-  const URL = "http://localhost:3000/players"
+const URL = "http://localhost:3000/players";
 
-  function App() {
-
-  const [players, setPlayers] = useState([])
+function App() {
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     fetch(URL)
-    .then(res => res.json())
-    .then(setPlayers)
-  },[])
+      .then((res) => res.json())
+      .then(setPlayers);
+  }, []);
 
   return (
     <Router>
@@ -30,7 +29,7 @@ import { useEffect, useState } from "react";
               <Home />
             </Route>
             <Route path="/draft">
-              <DraftPlayers players={players} setPlayers={setPlayers}/>
+              <DraftPlayers players={players} setPlayers={setPlayers} />
             </Route>
             <Route path="/create">
               <Create players={players} setPlayers={setPlayers} />

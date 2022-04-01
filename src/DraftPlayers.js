@@ -1,50 +1,53 @@
 import React from "react";
 import PlayerCard from "./PlayerCard";
-import './draftPlayers.css';
+import "./draftPlayers.css";
 import { useState } from "react";
 
 function DraftPlayers({ players, setPlayers }) {
   const [selectedQB, setSelectedQB] = useState();
   const [selectedWR, setSelectedWR] = useState();
-  const [money, setMoney] = useState(1100)
+  const [money, setMoney] = useState(1100);
 
   function handleDraft(player) {
-    // console.log(player)
-    const draftedPlayer = {...player, drafted: true}
-    const newPlayers = players.map( p => p.id === player.id ? draftedPlayer : p )
+    const draftedPlayer = { ...player, drafted: true };
+    const newPlayers = players.map((p) =>
+      p.id === player.id ? draftedPlayer : p
+    );
 
-    if (player.price <= money){
-      setPlayers(newPlayers)
-      setMoney(money - player.price)
+    if (player.price <= money) {
+      setPlayers(newPlayers);
+      setMoney(money - player.price);
     } else {
-      alert("CHECK YOUR BUDGET & PLEASE DRAFT SOMEONE LESS EXPENSIVE")
+      alert("CHECK YOUR BUDGET & PLEASE DRAFT SOMEONE LESS EXPENSIVE");
     }
   }
-  
+
   function handleCut(player) {
     // console.log(player)
-    const draftedPlayer = {...player, drafted: false}
-    const newPlayers = players.map( p => p.id === player.id ? draftedPlayer : p )
+    const draftedPlayer = { ...player, drafted: false };
+    const newPlayers = players.map((p) =>
+      p.id === player.id ? draftedPlayer : p
+    );
 
-    setPlayers(newPlayers)
-    setMoney(money + player.price)
+    setPlayers(newPlayers);
+    setMoney(money + player.price);
   }
 
   function handleDelete(player) {
-     player.drafted && handleCut(player)
+    player.drafted && handleCut(player);
 
     fetch(`http://localhost:3000/players/${player.id}`, {
       method: "DELETE",
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
     })
-    .then(() => {
-      if (player.position === "QB") {
-        setSelectedQB()
-      } else {
-        setSelectedWR()
-      }
-    })
-    .then(() => setPlayers(players.filter(p => p.id !== player.id)))
+      .then(() => {
+        if (player.position === "QB") {
+          setSelectedQB();
+        } else {
+          setSelectedWR();
+        }
+      })
+      .then(() => setPlayers(players.filter((p) => p.id !== player.id)));
   }
 
   return (
@@ -71,12 +74,16 @@ function DraftPlayers({ players, setPlayers }) {
         </select>
       </div>
       <div className="QBCard">
-        {selectedQB && <PlayerCard 
-        selectedPlayer={players.find((player) => player.id === parseInt(selectedQB))}
-        handleDraft={handleDraft}
-        handleCut={handleCut}
-        handleDelete={handleDelete}
-        />}
+        {selectedQB && (
+          <PlayerCard
+            selectedPlayer={players.find(
+              (player) => player.id === parseInt(selectedQB)
+            )}
+            handleDraft={handleDraft}
+            handleCut={handleCut}
+            handleDelete={handleDelete}
+          />
+        )}
       </div>
 
       <div className="SelectWR">
@@ -99,12 +106,16 @@ function DraftPlayers({ players, setPlayers }) {
         </select>
       </div>
       <div className="WRCard">
-        {selectedWR && <PlayerCard 
-        selectedPlayer={players.find((player) => player.id === parseInt(selectedWR))}
-        handleDraft={handleDraft}
-        handleCut={handleCut}
-        handleDelete={handleDelete}
-        />}
+        {selectedWR && (
+          <PlayerCard
+            selectedPlayer={players.find(
+              (player) => player.id === parseInt(selectedWR)
+            )}
+            handleDraft={handleDraft}
+            handleCut={handleCut}
+            handleDelete={handleDelete}
+          />
+        )}
       </div>
 
       <h3>💰 &nbsp; Budget: ${money} &nbsp; 💰</h3>

@@ -1,81 +1,77 @@
 import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
-import './create.css';
+import "./create.css";
 
-function Create({players, setPlayers, onAddPlayer}) {
-
-  const [newName, setNewName] = useState('')
-  const [newRank, setNewRank] = useState(1)
-  const [newPrice, setNewPrice] = useState(1000)
-  const [newImage, setNewImage] = useState('')
-  const [newPosition, setNewPosition] = useState("QB")
+function Create({ players, setPlayers }) {
+  const [newName, setNewName] = useState("");
+  const [newRank, setNewRank] = useState(1);
+  const [newPrice, setNewPrice] = useState(1000);
+  const [newImage, setNewImage] = useState("");
+  const [newPosition, setNewPosition] = useState("QB");
   const history = useHistory();
-  
+
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const formData = {
       name: newName,
       image: newImage,
       rank: newRank,
       position: newPosition,
       price: newPrice,
-      canDelete: true
+      canDelete: true,
       // drafted: false
-
-    }
+    };
     // console.log("handleSubmit formData:", formData)
 
     fetch("http://localhost:3000/players", {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(formData)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     })
-    .then(res => res.json())
-    .then(json => {
-      players.push(json)
-      console.log("json")
-      console.log(json)
-      console.log("players")
-      console.log(players)
-      setPlayers(players)
-    })
-    .then(() => {
-      setNewName('')
-      setNewRank(1)
-      setNewPrice(1000)
-      setNewImage('')
-      setNewPosition("QB")
-  
-      history.push("/draft")
-    })
+      .then((res) => res.json())
+      .then((json) => {
+        players.push(json);
+        console.log("json");
+        console.log(json);
+        console.log("players");
+        console.log(players);
+        setPlayers(players);
+      })
+      .then(() => {
+        setNewName("");
+        setNewRank(1);
+        setNewPrice(1000);
+        setNewImage("");
+        setNewPosition("QB");
+
+        history.push("/draft");
+      });
   }
 
-  function handleRankChange (e) {
-    const rank = parseInt(e.target.value)
-    setNewRank(rank)
-    const priceCalc = 1100 - (rank * 100) 
-    setNewPrice(priceCalc)
+  function handleRankChange(e) {
+    const rank = parseInt(e.target.value);
+    setNewRank(rank);
+    const priceCalc = 1100 - rank * 100;
+    setNewPrice(priceCalc);
   }
 
   return (
     <div id="create" className="create">
-
       <h2>🏈 &nbsp;&nbsp; Create a New Player &nbsp;&nbsp; 🏈</h2>
 
       <form className="playerform" onSubmit={handleSubmit}>
-
         <div className="playerName">
           <label htmlFor="name">Player Name: </label>
-          <input 
-            type="text" 
+          <input
+            type="text"
             id="name"
             className="name"
-            placeholder="New Player Name" 
+            placeholder="New Player Name"
             required
-            value={newName} 
-            onChange={e => setNewName(e.target.value)}>          
-          </input>
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+          ></input>
         </div>
 
         <div className="playerRank">
@@ -96,33 +92,32 @@ function Create({players, setPlayers, onAddPlayer}) {
 
         <div className="playerPrice">
           <label htmlFor="price">Price: </label>
-          <input 
-            type="text" 
-            id="price" 
-            value={newPrice}
-            readOnly>
-          </input>
+          <input type="text" id="price" value={newPrice} readOnly></input>
         </div>
 
         <div className="playerImg">
           <label htmlFor="imgUrl">Image URL: </label>
-          <input 
-            type="text" 
-            id="imgUrl" 
-            placeholder="Paste URL Here" 
+          <input
+            type="text"
+            id="imgUrl"
+            placeholder="Paste URL Here"
             value={newImage}
-            onChange={e => setNewImage(e.target.value)}>          
-          </input>
+            onChange={(e) => setNewImage(e.target.value)}
+          ></input>
         </div>
 
         <div className="playerPosition">
           <label htmlFor="position">Select Position: </label>
-          <select id="position" value={newPosition} onChange={e => setNewPosition(e.target.value)}>
+          <select
+            id="position"
+            value={newPosition}
+            onChange={(e) => setNewPosition(e.target.value)}
+          >
             <option value="QB">Quarterback</option>
             <option value="WR">Wide Receiver</option>
           </select>
-        </div>   
-        <input className="submit" type="submit" value=" CREATE NEW PLAYER " />    
+        </div>
+        <input className="submit" type="submit" value=" CREATE NEW PLAYER " />
       </form>
     </div>
   );
